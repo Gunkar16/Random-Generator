@@ -5,19 +5,52 @@ const students = [
     "Shreya", "Toshani", "Trinav", "Uday", "Vaibhavi", "Veer", "Vridhi", "Yajur"
 ];
 
-const nameOl = document.getElementById("name-ol");
+document.getElementById("minutes").value = 1;
+const nameOlPopup = document.getElementById("name-ol-popup");
 const randomNameDisplay = document.getElementById("random-name");
 const randomizeButton = document.getElementById("randomize-button");
+const eliminateButton = document.getElementById("eliminate-button");
 
-students.forEach((student) => {
+const originalNumbers = Array.from({ length: students.length }, (_, index) => index + 1);
+
+students.forEach((student, index) => {
     const li = document.createElement("li");
-    li.innerText = student;
-    nameOl.appendChild(li);
+    li.className = "name-list-item";
+
+    const numberSpan = document.createElement("span");
+    numberSpan.className = "name-list-number";
+    numberSpan.textContent = originalNumbers[index] + ".";
+
+    const nameSpan = document.createElement("span");
+    nameSpan.className = "name-list-text";
+    nameSpan.textContent = student;
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "remove-button";
+    closeButton.textContent = "×";
+
+    li.appendChild(numberSpan);
+    li.appendChild(nameSpan);
+    li.appendChild(closeButton);
+    nameOlPopup.appendChild(li);
+
+    closeButton.addEventListener("click", () => {
+        students.splice(index, 1);
+        originalNumbers.splice(index, 1);
+        updateNameList();
+    });
 });
 
 randomizeButton.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * students.length);
-    const randomName = students[randomIndex];
+    const filteredStudents = students.filter(student => !student.removed);
+
+    if (filteredStudents.length === 0) {
+        randomNameDisplay.textContent = "No more names";
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * filteredStudents.length);
+    const randomName = filteredStudents[randomIndex];
 
     randomNameDisplay.classList.remove("fly-in");
     randomNameDisplay.style.transition = "none";
@@ -48,9 +81,92 @@ randomizeButton.addEventListener("click", () => {
     }, 1000);
 });
 
+eliminateButton.addEventListener("click", () => {
+    if (!randomNameDisplay.textContent || randomNameDisplay.textContent === "No more names") {
+        return;
+    }
+
+    const eliminatedStudent = randomNameDisplay.textContent;
+    const index = students.findIndex(student => student === eliminatedStudent);
+    if (index !== -1) {
+        students.splice(index, 1);
+        originalNumbers.splice(index, 1);
+        updateNameList();
+        randomizeButton.click();
+    }
+});
+
+function updateNameList() {
+    nameOlPopup.innerHTML = "";
+
+    students.forEach((student, index) => {
+        if (!student.removed) {
+            const li = document.createElement("li");
+            li.className = "name-list-item";
+
+            const numberSpan = document.createElement("span");
+            numberSpan.className = "name-list-number";
+            numberSpan.textContent = originalNumbers[index] + ".";
+
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "name-list-text";
+            nameSpan.textContent = student;
+
+            const closeButton = document.createElement("button");
+            closeButton.className = "remove-button";
+            closeButton.textContent = "×";
+
+            li.appendChild(numberSpan);
+            li.appendChild(nameSpan);
+            li.appendChild(closeButton);
+            nameOlPopup.appendChild(li);
+
+            closeButton.addEventListener("click", () => {
+                students.splice(index, 1);
+                originalNumbers.splice(index, 1);
+                updateNameList();
+            });
+        }
+    });
+}
+
 function getRandomValue(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+// Rest of your timer and popup code
+// ...
+
+
+// Rest of your timer and popup code
+// ...
+
+// ... (rest of your code)
+
+// Rest of your timer and popup code
+// ...
+
+// ... (rest of your code)
+
+
+// Rest of your timer and popup code
+// ...
+
+// ... (rest of your code)
+
+// Rest of your code for the timer and popups
+
+// ... (rest of your code)
+
+
+// ... (rest of your code)
+
+
+// ... (rest of your code)
+
+let initialHours = 0;
+let initialMinutes = 1;
+let initialSeconds = 0;
 
 const hoursInput = document.getElementById("hours");
 const minutesInput = document.getElementById("minutes");
@@ -67,13 +183,15 @@ let remainingTime = 0;
 
 startTimerButton.addEventListener("click", () => {
     if (!timerInterval) {
-        const hours = parseInt(hoursInput.value) || 0;
-        const minutes = parseInt(minutesInput.value) || 0;
-        const seconds = parseInt(secondsInput.value) || 0;
+        initialHours = parseInt(hoursInput.value) || 0;
+        initialMinutes = parseInt(minutesInput.value) || 1;
+        initialSeconds = parseInt(secondsInput.value) || 0;
 
-        remainingTime = hours * 3600 + minutes * 60 + seconds;
+        remainingTime = initialHours * 3600 + initialMinutes * 60 + initialSeconds;
 
         updateTimerDisplay();
+
+        timerPopup.style.display = "block"; // Show the timer popup
 
         timerInterval = setInterval(() => {
             if (!isPaused) {
@@ -93,14 +211,24 @@ startTimerButton.addEventListener("click", () => {
 resetTimerButton.addEventListener("click", () => {
     clearInterval(timerInterval);
     timerInterval = null;
-    isPaused = false;
-    remainingTime = 0;
+    remainingTime = initialHours * 3600 + initialMinutes * 60 + initialSeconds;
     updateTimerDisplay();
+
+    if (!isPaused) {
+        startTimer();
+    } else {
+        pauseTimerButton.textContent = "Resume";
+        pauseTimerButton.disabled = false;
+    }
 });
 
 pauseTimerButton.addEventListener("click", () => {
     isPaused = !isPaused;
     pauseTimerButton.textContent = isPaused ? "Resume" : "Pause";
+
+    if (!isPaused) {
+        startTimer();
+    }
 });
 
 function updateTimerDisplay() {
@@ -112,3 +240,72 @@ function updateTimerDisplay() {
 
     timerDisplayPopup.textContent = formattedTime;
 }
+
+function startTimer() {
+    clearInterval(timerInterval);
+
+    updateTimerDisplay();
+
+    timerInterval = setInterval(() => {
+        if (!isPaused) {
+            if (remainingTime <= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                timerDisplayPopup.textContent = "Time's up!";
+            } else {
+                remainingTime--;
+                updateTimerDisplay();
+            }
+        }
+    }, 1000);
+}
+
+// Popup list functionality
+
+const listButton = document.getElementById("list-button");
+const nameListPopup = document.getElementById("name-list-popup");
+const closeListPopupButton = document.getElementById("close-list-popup");
+
+listButton.addEventListener("click", () => {
+    nameListPopup.style.display = "block";
+});
+
+closeListPopupButton.addEventListener("click", () => {
+    nameListPopup.style.display = "none";
+});
+
+// ... (rest of the code)
+// ... (previous code)
+
+// ... (previous code)
+
+const increaseHoursButton = document.getElementById("hours-increment");
+const decreaseHoursButton = document.getElementById("hours-decrement");
+const increaseMinutesButton = document.getElementById("minutes-increment");
+const decreaseMinutesButton = document.getElementById("minutes-decrement");
+const increaseSecondsButton = document.getElementById("seconds-increment");
+const decreaseSecondsButton = document.getElementById("seconds-decrement");
+
+increaseHoursButton.addEventListener("click", () => {
+    hoursInput.value = (parseInt(hoursInput.value) || 0) + 1;
+});
+
+decreaseHoursButton.addEventListener("click", () => {
+    hoursInput.value = Math.max((parseInt(hoursInput.value) || 0) - 1, 0);
+});
+
+increaseMinutesButton.addEventListener("click", () => {
+    minutesInput.value = (parseInt(minutesInput.value) || 0) + 1;
+});
+
+decreaseMinutesButton.addEventListener("click", () => {
+    minutesInput.value = Math.max((parseInt(minutesInput.value) || 0) - 1, 0);
+});
+
+increaseSecondsButton.addEventListener("click", () => {
+    secondsInput.value = (parseInt(secondsInput.value) || 0) + 1;
+});
+
+decreaseSecondsButton.addEventListener("click", () => {
+    secondsInput.value = Math.max((parseInt(secondsInput.value) || 0) - 1, 0);
+});
