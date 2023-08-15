@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>8-A's Random Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">8-A's Random Generator</h1>
+        <p class="footer">Coded by Gunkar16</p>
+        <div class="generator-container">
+            <div id="size">
+                <div class="randomize">
+                    <h2>Random Name:</h2>
+                    <p id="random-name" class="fly-in">Click 'Randomize' to get a name</p>
+                    <button id="randomize-button">Randomize</button>
+                    <button id="eliminate-button">Eliminate</button>
+                    <button id="list-button">List 📋</button>
+                </div>
+                
+                
+                <div class="randomize timer_lol">
+                    <div class="timer-box">
+                        <h2>Timer</h2>
+
+                        <div class="timer-inputs" id="timer-inputs">
+                            <div class="button-group">
+                                <button class="timer-button" id="hours-increment">&#9650;</button>
+                                <input type="number" id="hours" placeholder="Hours">
+                                <button class="timer-button" id="hours-decrement">&#9660;</button>
+                            </div>
+                            <div class="button-group">
+                                <button class="timer-button" id="minutes-increment">&#9650;</button>
+                                <input type="number" id="minutes" placeholder="Minutes">
+                                <button class="timer-button" id="minutes-decrement">&#9660;</button>
+                            </div>
+                            <div class="button-group">
+                                <button class="timer-button" id="seconds-increment">&#9650;</button>
+                                <input type="number" id="seconds" placeholder="Seconds">
+                                <button class="timer-button" id="seconds-decrement">&#9660;</button>
+                            </div>
+                            <button id="start-timer-button">Start</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timer-popup" class="popup">
+        <div class="popup-content">
+            <button id="close-list-popup_lol" class="close-popup">×</button>    
+            <p id="timer-display-popup">00:00:00</p>
+            <div class="popup-buttons">
+                <button id="pause-timer-popup-button">
+                    <img src="pause.png" alt="Pause Icon" width="24" height="24">
+                </button>
+                <button id="reset-timer-popup-button" class="reset-button">
+                    <img src="reset.png" alt="Reset Icon" width="24" height="24">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="name-list-popup" class="popup">
+        <div class="popup-content listLol">
+            <button id="close-list-popup" class="close-popup">×</button>
+            <h2>Name List</h2>
+            <ol id="name-ol-popup" class="name-list-scroll">
+                <!-- Names will be added here dynamically through JavaScript -->
+            </ol>
+        </div>
+    </div>
+
+    <script src="8A.js"></script>
+</body>
+
+</html>

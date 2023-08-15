@@ -1,0 +1,60 @@
+/* all.css */
+
+/* all.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    border:solid white 5px;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.361); /* Black background with reduced opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    width: 70%; /* Increase the width to 70% */
+    max-width: 600px; /* Limit the maximum width */
+    margin: auto; /* Center the container horizontally */
+}
+
+/* ... (other existing styles) ... */
+
+/* ... (other existing styles) ... */
+
+/* ... (other existing styles) ... */
+
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff; /* Light text color for heading */
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
