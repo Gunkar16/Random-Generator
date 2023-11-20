@@ -15,6 +15,7 @@
         <button id="class-8B">8-B</button>
         <button id="class-8C">8-C</button>
         <button id="Teachers">Teacher's Day Special</button>
+        <button id="pair">Pair</button>
     </div>
 
     <script>
@@ -22,6 +23,7 @@
         const class8BButton = document.getElementById("class-8B");
         const class8CButton = document.getElementById("class-8C");
         const Teachers = document.getElementById("Teachers");
+        const pair = document.getElementById("pair");
         class8AButton.addEventListener("click", () => {
             window.location.href = "8A.html";
         });
@@ -36,6 +38,9 @@
 
         Teachers.addEventListener("click", () => {
             window.location.href = "Teachers.html";
+        });
+        pair.addEventListener("click",() =>{
+            window.location.href = "pair.html";
         });
     </script>
 </body>

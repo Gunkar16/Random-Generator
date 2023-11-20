@@ -18,15 +18,19 @@ body {
 }
 
 .container {
-    border:solid white 5px;
+    border: solid white 5px;
     text-align: center;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.361); /* Black background with reduced opacity */
+    background-color: rgba(0, 0, 0, 0.361);
+    /* Black background with reduced opacity */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    width: 70%; /* Increase the width to 70% */
-    max-width: 600px; /* Limit the maximum width */
-    margin: auto; /* Center the container horizontally */
+    width: 70%;
+    /* Increase the width to 70% */
+    max-width: 600px;
+    /* Limit the maximum width */
+    margin: auto;
+    /* Center the container horizontally */
 }
 
 /* ... (other existing styles) ... */
@@ -39,7 +43,8 @@ body {
 h1 {
     font-size: 36px;
     margin-bottom: 30px;
-    color: #fff; /* Light text color for heading */
+    color: #fff;
+    /* Light text color for heading */
 }
 
 button {
@@ -58,9 +63,36 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-#Teachers{
+
+#Teachers {
     /* background: rgb(34,193,195);
     background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
-    background: rgb(131,58,180);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+
+
+}
+
+#pair {
+
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
+    /* background-image: linear-gradient(to right, #DC2424 0%, #4A569D 51%, #DC2424 100%); */
+    /* background-image: linear-gradient(to right, #000046 0%, #1CB5E0 51%, #000046 100%); */
+             
+        background-image: linear-gradient(to right, #007991 0%, #78ffd6  51%, #007991  100%);
+        background-image: linear-gradient(to right,#36d1dc 30%,#5b86e5 100%);
+     
+}
+
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
 }

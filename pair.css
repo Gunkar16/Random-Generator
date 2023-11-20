@@ -1,0 +1,459 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Set the background image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Light text color */
+    margin: 0;
+    padding: 0;
+}
+
+    .container {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .header {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .generator-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+
+    #name-ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+
+    #name-ol li {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+
+    .timer-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .timer-container h2 {
+        margin-bottom: 10px;
+    }
+
+    .timer-inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+
+    #timer-display {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #size {
+        width: 50%;
+    }
+
+    #start-timer-button {
+        width: 15%;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #4CAF50;
+    }
+
+
+    #reset-timer-popup-button {
+        border-radius:50%;
+        width: 70px;
+        height:70px;
+        background-color: #00000057; /* Red */
+        margin-left:80px;
+    }
+
+
+
+    #pause-timer-popup-button {
+        border-radius:50%;
+        width: 70px;
+        height:70px;
+        background-color: #00000057; /* Red */
+        position: fixed;
+
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #181818; /* Dark background color */
+        color: #fff; /* Light text color */
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .header {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        font-size: 18px;    
+        color: #ff4500; /* Prominent color for "Coded by Gunkar16" */
+        margin-top: 10px;
+        text-align: center; /* Center align the text */
+        padding: 10px; /* Add padding around the footer */
+        max-width: 13%; /* Limit the maximum width of the footer */
+        background-color: white; /* Set the background color to white */
+        border-radius: 10px; /* Add border radius for rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        margin: 0 auto; /* Center the footer horizontally */
+        font-family: 'Signika', sans-serif; /* Use the Signika font */
+
+    }
+    
+
+    .generator-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .name-list, .randomize {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.637); /* Dark background color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        flex: 1;
+        margin: 0 10px; /* Add margin as needed */
+    }
+
+    #name-ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+
+    #name-ol li {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    #random{
+        display: flex;
+        justify-content:space-around;
+    }
+    #random-name {
+        font-size: 50px;
+        font-weight: bold;
+        /* display: flex; */
+    }
+    
+    #random-name2 {
+        font-size: 50px;
+        font-weight: bold;
+        /* display: flex; */
+    }
+
+    .timer-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .timer-container h2 {
+        margin-bottom: 10px;
+    }
+
+    .timer-inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+
+    .timer-inputs input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    #timer-display {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #size {
+        width:70%;
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    #popup-message {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+
+    .timer_lol{
+        margin-top: 20px;
+    }
+
+    #popup-message {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+
+
+
+    .timer_lol{
+        margin-top: 20px;
+    }
+    /* ... (previous styles) ... */
+
+    /* ... (previous styles) ... */
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #333; /* Dark background color */
+        padding: 80px; /* Increase padding for the popup content */
+        border-radius: 25px; /* Border radius for rounded corners */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        color: #fff; /* Light text color */
+        font-size: 28px; /* Increase font size for the popup content */
+    }
+
+    #timer-display-popup {
+        font-size: 60px; /* Increase font size for the timer display */
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    /* ... (rest of your CSS) ... */
+
+    .timer-inputs input[type="number"] {
+        padding: 10px;
+        font-size: 21px;
+        border: none;
+        border-radius: 4px;
+        width: 100px;
+        height: 300px; /* Increased height */
+        text-align: center;
+        transition: border-color 0.3s;
+        background-color: white;
+        color: black;
+        display: block; /* Ensure inputs are displayed as blocks */
+        margin: 10px 10px; /* Center-align the inputs */
+    }
+
+
+    .timer-button {
+        background-color: white;
+        color: #007bff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 15px;
+        margin: 0 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 250px; /* Adjusted height to accommodate the inputs */
+    }
+    /* ... (previous styles) ... */
+
+    .randomize {
+        /* ... (existing styles) ... */
+        position: relative; /* To position the List button name-list-popu.*/
+    }
+
+    #list-button {
+        padding: 10px 20px;
+        background-color: #FFA500; /* Orange color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+        width:100px;
+    }
+
+    #name-list-popup {
+        display: none;
+    }
+
+    /* ... (previous styles) ... */
+
+    /* ... (previous styles) ... */
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+        z-index: 1;
+        width:400px;
+        height:500px;
+    }
+
+    .name-list-scroll {
+        max-height: 75%; /* Add max-height to enable scrollbar */
+        overflow-y: auto; /* Enable vertical scrollbar */
+    }
+
+    .name-list-scroll li {
+        font-size: 16px; /* Adjust font size as needed */
+        padding: 5px 10px; /* Adjust padding as needed */
+    }
+
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 8px 13px;
+        background-color: #FF5733;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 1;
+        font-size: 20px;
+    }
+
+    #close-list-popup {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* ... (rest of your CSS) ... */
+
+
+    /* ... (rest of your CSS) ... */
+
+
+    /* ... (rest of your CSS) ... */
+    .name-list {
+        list-style-type: decimal; /* Use decimal numbering */
+        padding-left: 20px; /* Adjust the left padding for the numbering */
+        margin: 0; /* Remove default margin */
+    }
+    /* Add this to your existing CSS or in a <style> tag in your HTML */
+    .name-list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .name-list-text {
+        flex-grow: 1;
+        font-size: 18px;
+    }
+
+    .remove-button {
+        background-color: #FF5733;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        padding: 5px 10px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .remove-button:hover {
+        background-color: #FF3417;
+    }
+    #eliminate-button {
+        padding: 10px 20px;
+        background-color: #FF5733; /* Red */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: none; /* Remove the hover effect */
+    }/* styles.css */
+
+/* ... (previous styles) ... */
+
+/* Rest of your styles */
+.popup-content{
+    width:40%;
+    height:32%;
+}
+.listLol{
+    height:80%;
+}
+#randomize-button{
+    /* display: none; */
+}
